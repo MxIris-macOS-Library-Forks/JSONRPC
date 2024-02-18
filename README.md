@@ -1,5 +1,4 @@
 [![Build Status][build status badge]][build status]
-[![License][license badge]][license]
 [![Platforms][platforms badge]][platforms]
 [![Documentation][documentation badge]][documentation]
 
@@ -60,6 +59,9 @@ The closures on the `DataChannel` allow different transport mechanisms to be use
   - Using swift actors to pass messages.
   - Can eg be useful for testing, where both client and server are implemented in swift and running in the same process.
   - Usage: `let (clientChannel, serverChannel) = DataChannel.withDataActor()`
+- WebSocket channel
+  - Uses `URLSessionWebSocketTask` as a message transport.
+  - Usage: `let channel = DataChannel.webSocket(url: socketURL, terminationHandler: { print("socket closed" })`
 
 ## Contributing and Collaboration
 
